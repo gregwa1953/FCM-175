@@ -85,6 +85,7 @@ def startup():
         filecount.write('0')
         filecount.close
     # Set up the root.after timer
+    centre_screen(777, 657)
     Timer_ID = root.after(0, on_tick())
 
 
@@ -208,6 +209,14 @@ def showinfo(titl, msg):
 
 def showerror(titl, msg):
     messagebox.showerror(titl, msg, parent=root, icon=messagebox.ERROR)
+
+
+def centre_screen(wid, hei):
+    ws = root.winfo_screenwidth()
+    hs = root.winfo_screenheight()
+    x = (ws / 2) - (wid / 2)
+    y = (hs / 2) - (hei / 2)
+    root.geometry('%dx%d+%d+%d' % (wid, hei, x, y))
 
 
 def destroy_window():
