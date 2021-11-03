@@ -5,7 +5,7 @@ The project for November 2021 is called NasaStills-tk and is my attempt to creat
 
 Here is an example of my version of the program working...
 
-![NasaStills - Tk_007](/home/greg/GitHub/gregwa/FCM-175/NasaStills - Tk_007.png)
+![NasaStills - Tk_007](NasaStills - Tk_007.png)
 
 Source code is included in this repository.
 
