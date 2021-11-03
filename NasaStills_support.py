@@ -14,23 +14,22 @@
 
 import sys
 from os.path import exists
-from io import BytesIO
 from datetime import datetime, timedelta
 from pathlib import Path
-import tkinter
 import requests
 from requests.exceptions import Timeout
 from PIL import Image, ImageTk
-from tkinter import Spinbox, messagebox
-from tkinter import font
-from tkinter import filedialog
-from tkinter import constants
 import shutil
 
 try:
     import Tkinter as tk
 except ImportError:
     import tkinter as tk
+
+from tkinter import Spinbox, messagebox
+from tkinter import font
+from tkinter import filedialog
+from tkinter import constants
 
 try:
     import ttk
@@ -77,7 +76,7 @@ def startup():
     che47.set(0)
     w.Spinbox1.configure(state=constants.DISABLED)
     debug = True
-    # check for existance of the save file counter
+    # check for existence of the save file counter
     if exists('filecounter.txt'):
         pass
     else:

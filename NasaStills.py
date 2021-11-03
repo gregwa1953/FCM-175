@@ -21,32 +21,38 @@ except ImportError:
 
 import NasaStills_support
 
+
 def vp_start_gui():
     '''Starting point when module is the main routine.'''
     global val, w, root
     root = tk.Tk()
     NasaStills_support.set_Tk_var()
-    top = Toplevel1 (root)
+    top = Toplevel1(root)
     NasaStills_support.init(root, top)
     root.mainloop()
 
+
 w = None
+
+
 def create_Toplevel1(rt, *args, **kwargs):
     '''Starting point when module is imported by another module.
        Correct form of call: 'create_Toplevel1(root, *args, **kwargs)' .'''
     global w, w_win, root
     #rt = root
     root = rt
-    w = tk.Toplevel (root)
+    w = tk.Toplevel(root)
     NasaStills_support.set_Tk_var()
-    top = Toplevel1 (w)
+    top = Toplevel1(w)
     NasaStills_support.init(w, top, *args, **kwargs)
     return (w, top)
+
 
 def destroy_Toplevel1():
     global w
     w.destroy()
     w = None
+
 
 class Toplevel1:
     def __init__(self, top=None):
@@ -54,14 +60,14 @@ class Toplevel1:
            top is the toplevel containing window.'''
         _bgcolor = '#d9d9d9'  # X11 color: 'gray85'
         _fgcolor = '#000000'  # X11 color: 'black'
-        _compcolor = '#d9d9d9' # X11 color: 'gray85'
-        _ana1color = '#d9d9d9' # X11 color: 'gray85'
-        _ana2color = '#ececec' # Closest X11 color: 'gray92'
+        _compcolor = '#d9d9d9'  # X11 color: 'gray85'
+        _ana1color = '#d9d9d9'  # X11 color: 'gray85'
+        _ana2color = '#ececec'  # Closest X11 color: 'gray92'
 
         top.geometry("777x657+763+58")
         top.minsize(1, 1)
         top.maxsize(4225, 1410)
-        top.resizable(0,  0)
+        top.resizable(0, 0)
         top.title("NasaStills - Tk")
         top.configure(background="skyblue4")
         top.configure(highlightcolor="black")
@@ -156,10 +162,6 @@ class Toplevel1:
         self.btnSet.configure(highlightbackground="skyblue3")
         self.btnSet.configure(text='''Set''')
 
+
 if __name__ == '__main__':
     vp_start_gui()
-
-
-
-
-
